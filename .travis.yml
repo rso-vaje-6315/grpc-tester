@@ -24,7 +24,6 @@ script:
   - docker build -t rso6315/grpc-tester .
 
 after_success:
-  - mvn deploy -DskipTests=true --settings .ci/settings.xml -P !default,deploy-lib
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push rso6315/grpc-tester
 
