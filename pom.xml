@@ -102,7 +102,7 @@
             <dependency>
                 <groupId>com.kumuluz.ee.grpc</groupId>
                 <artifactId>kumuluzee-grpc</artifactId>
-                <version>${kumuluz-grpc.version}</version>
+                <version>${kumuluzee-grpc.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
