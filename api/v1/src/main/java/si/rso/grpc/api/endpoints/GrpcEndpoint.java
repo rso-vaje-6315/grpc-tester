@@ -1,12 +1,15 @@
 package si.rso.grpc.api.endpoints;
 
+import si.rso.grpc.services.InvoiceService;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.ws.rs.*;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-
-import si.rso.grpc.services.GrpcService;
 
 @Path("/grpc")
 @RequestScoped
@@ -15,11 +18,12 @@ import si.rso.grpc.services.GrpcService;
 public class GrpcEndpoint {
     
     @Inject
-    private GrpcService grpcService;
+    private InvoiceService invoiceService;
     
     @POST
+    @Path("/create-invoice")
     public Response sendGrpcMessage() {
-        grpcService.sendGrpcMessage("");
+        invoiceService.createInvoice();
         return Response.ok().build();
     }
 

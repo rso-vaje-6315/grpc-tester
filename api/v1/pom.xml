@@ -62,11 +62,45 @@
             <groupId>si.rso.rest</groupId>
             <artifactId>rest-utils</artifactId>
         </dependency>
+        <dependency>
+            <groupId>si.rso.invoice</groupId>
+            <artifactId>invoice-service-lib-v1</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.kumuluz.ee.grpc</groupId>
+            <artifactId>kumuluzee-grpc</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
         <finalName>grpc-tester</finalName>
+        <extensions>
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>1.6.2</version>
+            </extension>
+        </extensions>
         <plugins>
+            <plugin>
+                <groupId>org.xolstice.maven.plugins</groupId>
+                <artifactId>protobuf-maven-plugin</artifactId>
+                <version>0.6.1</version>
+                <configuration>
+                    <protocArtifact>com.google.protobuf:protoc:3.5.1-1:exe:${os.detected.classifier}</protocArtifact>
+                    <pluginId>grpc-java</pluginId>
+                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.14.0:exe:${os.detected.classifier}</pluginArtifact>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>compile-custom</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <groupId>com.kumuluz.ee</groupId>
                 <artifactId>kumuluzee-maven-plugin</artifactId>

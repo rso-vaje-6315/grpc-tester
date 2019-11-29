@@ -7,6 +7,8 @@ kumuluzee:
   server:
     show-server-info: false
     base-url: http://localhost:8080
+    http:
+      port: 8081
   cors-filter:
     servlet:
       allow-origin: "*"
@@ -25,19 +27,11 @@ kumuluzee:
       mapping: /health/
       enabled: true
     checks:
-      data-source-health-check:
-        type: liveness
-        jndi-name: jdbc/mainDB
       disk-space-health-check:
         threshold: 100000000
         type: liveness
-  datasources:
-    - jndi-name: jdbc/mainDB
-      connection-url: jdbc:postgresql://localhost:5432/grpc-tester
-      username: not_set
-      password: not_set
-      pool:
-        max-size: 20
-  security:
-    keycloak:
-      json: '{}'
+  grpc:
+    clients:
+      - name: invoice-client
+        port: 8443
+        address: localhost

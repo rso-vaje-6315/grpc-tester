@@ -11,7 +11,6 @@
 
     <modules>
         <module>api</module>
-        <module>lib</module>
         <module>services</module>
     </modules>
 
@@ -25,12 +24,12 @@
         <kumuluzee-rest.version>1.2.3</kumuluzee-rest.version>
         <kumuluzee-cors.version>1.0.5</kumuluzee-cors.version>
         <kumuluzee-health.version>2.1.0</kumuluzee-health.version>
-        <kumuluzee-security.version>1.1.0</kumuluzee-security.version>
         <kumuluzee-swagger.version>1.2.2</kumuluzee-swagger.version>
         <kumuluzee-openapi.version>1.0.1</kumuluzee-openapi.version>
         <jackson.version>2.9.9</jackson.version>
         <rso-rest.version>1.2.0</rso-rest.version>
         <kumuluzee-grpc.version>1.1.0</kumuluzee-grpc.version>
+        <rso-snapshots>1.0.0-SNAPSHOT</rso-snapshots>
     </properties>
 
     <dependencyManagement>
@@ -103,6 +102,11 @@
                 <groupId>com.kumuluz.ee.grpc</groupId>
                 <artifactId>kumuluzee-grpc</artifactId>
                 <version>${kumuluzee-grpc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>si.rso.invoice</groupId>
+                <artifactId>invoice-service-lib-v1</artifactId>
+                <version>${rso-snapshots}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

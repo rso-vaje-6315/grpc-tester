@@ -14,11 +14,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>si.rso.grpc</groupId>
-            <artifactId>grpc-tester-lib-v1</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>com.kumuluz.ee</groupId>
             <artifactId>kumuluzee-cdi-weld</artifactId>
         </dependency>
@@ -45,6 +40,10 @@
         <dependency>
             <groupId>si.rso.rest</groupId>
             <artifactId>rest-utils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>si.rso.invoice</groupId>
+            <artifactId>invoice-service-lib-v1</artifactId>
         </dependency>
         <dependency>
             <groupId>com.kumuluz.ee.grpc</groupId>
